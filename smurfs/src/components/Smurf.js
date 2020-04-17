@@ -1,5 +1,4 @@
 import React from "react";
-
 function Smurf({ smurf }) {
   return (
     <div className="card">

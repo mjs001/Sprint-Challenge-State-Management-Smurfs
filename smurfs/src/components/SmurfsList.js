@@ -9,7 +9,7 @@ const SmurfsList = ({ state, Get }) => {
   }, [Get]);
 
   if (state.isFetching) {
-    return <div className="lds-ellipsis"></div>;
+    return <div className="lds-ellipsis">loading...</div>;
   }
 
   return (
