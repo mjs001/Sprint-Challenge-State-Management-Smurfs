@@ -5,8 +5,8 @@ import App from "./components/App";
 import { createStore, applyMiddleware } from "redux";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
-import { provider } from "react-redux";
-import reducer from "./store/reducer";
+import { Provider } from "react-redux";
+import { reducer } from "./store/reducer";
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(

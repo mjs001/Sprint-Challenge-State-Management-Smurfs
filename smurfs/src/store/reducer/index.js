@@ -1,3 +1,5 @@
+import { GET } from "../actions";
+
 const initialState = {
   smurfs: [],
   isFetching: false,
@@ -5,5 +7,24 @@ const initialState = {
 };
 
 export const reducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case GET:
+      return {
+          ...state,
+          isFetching: true;
+      }
+    case GET_SUCCESS:
+      return{
+          ...state,
+          isFetching: false,
+          smurfs: action.payload
+      }
+    case POST:
+      return {
+          ...state,
+          smurfs: action.payload
+      }
+      default:
+          return state;
+  }
 };
