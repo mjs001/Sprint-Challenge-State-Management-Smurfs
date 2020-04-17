@@ -1,5 +1,6 @@
 import { GET } from "../actions";
-
+import { GET_SUCCESS } from "../actions";
+import { POST } from "../actions";
 const initialState = {
   smurfs: [],
   isFetching: false,
@@ -10,21 +11,21 @@ export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET:
       return {
-          ...state,
-          isFetching: true;
-      }
+        ...state,
+        isFetching: true,
+      };
     case GET_SUCCESS:
-      return{
-          ...state,
-          isFetching: false,
-          smurfs: action.payload
-      }
+      return {
+        ...state,
+        isFetching: false,
+        smurfs: action.payload,
+      };
     case POST:
       return {
-          ...state,
-          smurfs: action.payload
-      }
-      default:
-          return state;
+        ...state,
+        smurfs: action.payload,
+      };
+    default:
+      return state;
   }
 };
